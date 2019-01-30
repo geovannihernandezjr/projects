@@ -1,7 +1,7 @@
 //
 // Created by geova on 1/28/2019.
 //
-#include "matrixfunctions.h"
+#include "finished/matrixfunctions.h"
 
 matrixFunctions::matrixFunctions() {
     for (int row = 0; row < SIZE;  ++row)

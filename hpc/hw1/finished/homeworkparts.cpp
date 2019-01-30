@@ -17,10 +17,12 @@
 **Objective 2: To generate random numbers from -199.999 - 199.999.
 ** Then assigned numbers to matrix x and matrix y.
 ** And multiply the matrices to show results
+** And Display the results matrix
 ** Objective 3: To generate random numbers from -199.999 - 199.999 100 times
 ** Then assigned numbers to matrix x and matrix y.
 ** And multiply the matrices
-** And average out each element that is calculated from results matrix
+** And take average of each element as it iterates that is calculated from results matrix
+** And display the average results matrix
 ** Purpose: To gather functions from matrixfunctions header file to control operations
 ** needed to execute objectives such generating matrix with values, displaying matrix,
 ** multiplying matrices, and performing average of each corresponding elements in a matrix
@@ -79,15 +81,15 @@ void HomeworkParts::partThree(double x[][SIZE], double y[][SIZE], double results
         functions.randomGenerateMatrix(y, lower_bound, upper_bound);
         functions.displayMatrix(y, "Random Matrix Y: ");
         functions.multiMatrix(x, y, results);
-        if(i > 0) {
+        if(i > 1) {
             functions.averageMatrixElements(results,average);
             functions.displayMatrix(results, "Result Matrix using Random x times y: ");
             functions.displayMatrix(average,"Average Matrix Number " + std::to_string(i) + ": ");
         }
         else{
             functions.displayMatrix(results, "Result Matrix using Random x times y: ");
+            functions.setPreviousMatrix(results);
         }
     }
     functions.displayMatrix(average,"Final Average Matrix: ");
-    std::cout << "*******************************Average Random Hello World*********************************" << std::endl;
 }

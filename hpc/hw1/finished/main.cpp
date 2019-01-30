@@ -30,7 +30,7 @@
 using namespace std;
 
 int main(){
-    double x[SIZE][SIZE] = {0}, y[SIZE][SIZE] = {0}, results[SIZE][SIZE] = {0}, avg[SIZE][SIZE] = {0};
+    double x[ROW_SIZE][COL_SIZE], y[ROW_SIZE][COL_SIZE], results[ROW_SIZE][COL_SIZE], avg[ROW_SIZE][COL_SIZE];
     double lower_bound = -199.999, upper_bound = 199.999;
     int iteration_num = 0;
     char choice;
@@ -39,12 +39,24 @@ int main(){
 
 
     while((choice != 'x') || (choice != 'X')){
+        //initalize arrays
+        for (int row = 0; row < ROW_SIZE; ++row){
+            for(int col = 0; col < COL_SIZE; ++col){
+                x[row][col] =0;
+                y[row][col] = 0;
+                results[row][col] = 0;
+                avg[row][col] = 0; //used to clear the array back to 0 after completing average
+            }
+        }
+        cout << "**************************************************\n";
         cout << "Please select: \n"
                    << "1 for Part 1 \n"
                    << "2 for Part 2 \n"
                    << "3 for Part 3 \n"
                    << "x to exit program\n";
+        cout << "**************************************************\n";
         cin >> choice;
+
 
         switch(choice){
             case '1':
@@ -92,7 +104,6 @@ int main(){
                 return 0;
             default:
                 continue;
-
 
         }
 

@@ -124,7 +124,7 @@ void MatrixFunctions::multiMatrix(double x[][COL_SIZE], double y[][COL_SIZE], do
  * To calculate the average of each element within matrices
  * * i.e average = previousMatrix[0][0] + newMatrix[0][0] /2
  * @param newMatrix The matrix that contains the new values after performing matrix multiplication
- * @param average The matrix that contains the average of each correspoinding element
+ * @param average The matrix that contains the average of each corresponding element
  */
 void MatrixFunctions::averageMatrixElements(double newMatrix[][COL_SIZE], double average[][COL_SIZE]){
     for (int row = 0; row < ROW_SIZE; ++row){
@@ -138,5 +138,4 @@ void MatrixFunctions::averageMatrixElements(double newMatrix[][COL_SIZE], double
 
         }
     }
-
 }

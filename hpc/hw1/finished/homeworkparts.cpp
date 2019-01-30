@@ -75,7 +75,7 @@ void HomeworkParts::partThree(double x[][SIZE], double y[][SIZE], double results
     std::cout << "*******************************Average Random Hello World*********************************" << std::endl;
 
     for(int i = 1; i <=iterations; i++) {
-        std::cout << "Iteration Number: " << i << std::endl;
+        std::cout << "************************Iteration Number: " << i << "*****************************" << std::endl;
         functions.randomGenerateMatrix(x, lower_bound, upper_bound);
         functions.displayMatrix(x,"Random Matrix X: ");
         functions.randomGenerateMatrix(y, lower_bound, upper_bound);

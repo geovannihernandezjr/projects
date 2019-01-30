@@ -7,12 +7,12 @@
 
 #include "matrixfunctions.h"
 
-class homeworkParts{
+class HomeworkParts{
 private:
-    matrixFunctions functions;
+    MatrixFunctions functions;
 public:
-    void partOne(double [][SIZE], double [][SIZE], double [][SIZE]);
-    void partTwo(double [][SIZE], double [][SIZE], double [][SIZE], double, double);
+    void partOne(double x[][SIZE], double y[][SIZE], double results[][SIZE]);
+    void partTwo(double x[][SIZE], double y[][SIZE], double results[][SIZE], double lower_bound, double upper_bound);
     void partThree(double [][SIZE], double [][SIZE], double [][SIZE], double [][SIZE], double, double, int);
 };
 

@@ -9,7 +9,7 @@ int main(){
     double lower_bound = -199.999, upper_bound = 199.999;
     int iteration_num = 0;
     char choice;
-    homeworkParts parts;
+    HomeworkParts homeworkParts;
 
 
     while((choice != 'x') || (choice != 'X')){
@@ -22,12 +22,12 @@ int main(){
 
         switch(choice){
             case '1':
-                parts.partOne(x, y, results);
+                homeworkParts.partOne(x, y, results);
                 break;
             case '2':
                 cout << "Enter lower bound for random generator: ";
                 while(!(cin >> lower_bound)){
-                    cout << "Enter a number";
+                    cout << "ERROR must input a number";
                     cin.clear();
                     cin.ignore(132, '\n');
                 }
@@ -37,7 +37,7 @@ int main(){
                     cin.clear();
                     cin.ignore(132, '\n');
                 }
-                parts.partTwo(x, y, results, lower_bound, upper_bound);
+                homeworkParts.partTwo(x, y, results, lower_bound, upper_bound);
                 break;
             case '3':
                 cout << "Enter lower bound for random generator: ";
@@ -58,7 +58,7 @@ int main(){
                     cin.clear();
                     cin.ignore(132, '\n');
                 }
-                parts.partThree(x, y, results, avg, lower_bound, upper_bound, iteration_num);
+                homeworkParts.partThree(x, y, results, avg, lower_bound, upper_bound, iteration_num);
                 break;
             case 'x':
                 return 0;

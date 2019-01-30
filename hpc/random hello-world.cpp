@@ -1,54 +1,52 @@
 //
 // Created by geova on 1/27/2019.
 //
-#include <iostream>
-#include <cstdlib>
-#include <random>
-#include "matrixfunctions.h"
-#define SIZE 3
-
-using namespace std;
-
-//void generateMatrix(double [][SIZE], double, double);
-//void displayMatrix(double [][SIZE]);
-//void multiMatrix(double [][SIZE], double [][SIZE], double [][SIZE]);
-
-int main(){
-    double x[SIZE][SIZE], y[SIZE][SIZE], results[SIZE][SIZE];
-    double lower_bound = -199.999, upper_bound = 199.999;
-    matrixFunctions functions;
-    cout << "***************************************Hello World***************************************" << endl;
-    functions.customGenerateMatrix(x,y);
-    cout << "\nMatrix X: " << endl;
-    functions.displayMatrix(x);
-    cout << "\nMatrix Y: " << endl;
-    functions.displayMatrix(y);
-    cout << endl;
-    functions.multiMatrix(x, y, results);
-    cout << "\nResult Matrix using custom x and y: " << endl;
-    functions.displayMatrix(results);
-    cout << endl;
-
-
-    cout << "*******************************Random Hello World*********************************" << endl;
-
-    functions.randomGenerateMatrix(x, lower_bound, upper_bound);
-    cout << "\nRandom Matrix X: " << endl;
-    functions.displayMatrix(x);
-    cout << endl;
-    functions.randomGenerateMatrix(y, lower_bound, upper_bound);
-    cout << "\nRandom Matrix Y: " << endl;
-    functions.displayMatrix(y);
-    cout << endl;
-    functions.multiMatrix(x, y, results);
-    cout << "\nResult Matrix using Random x and y: " << endl;
-    functions.displayMatrix(results);
-    cout << "**********************************************************************************" << endl;
-
-
-
-    return 0;
-}
+//#include <iostream>
+//#include "matrixfunctions.h"
+//#define SIZE 3
+//
+//using namespace std;
+//
+////void generateMatrix(double [][SIZE], double, double);
+////void displayMatrix(double [][SIZE]);
+////void multiMatrix(double [][SIZE], double [][SIZE], double [][SIZE]);
+//
+//int main(){
+//    double x[SIZE][SIZE], y[SIZE][SIZE], results[SIZE][SIZE];
+//    double lower_bound = -199.999, upper_bound = 199.999;
+//    matrixFunctions functions;
+//    cout << "***************************************Hello World***************************************" << endl;
+//    functions.customGenerateMatrix(x,y);
+//    cout << "\nMatrix X: " << endl;
+//    functions.displayMatrix(x);
+//    cout << "\nMatrix Y: " << endl;
+//    functions.displayMatrix(y);
+//    cout << endl;
+//    functions.multiMatrix(x, y, results);
+//    cout << "\nResult Matrix using custom x and y: " << endl;
+//    functions.displayMatrix(results);
+//    cout << endl;
+//
+//
+//    cout << "*******************************Random Hello World*********************************" << endl;
+//
+//    functions.randomGenerateMatrix(x, lower_bound, upper_bound);
+//    cout << "\nRandom Matrix X: " << endl;
+//    functions.displayMatrix(x);
+//    cout << endl;
+//    functions.randomGenerateMatrix(y, lower_bound, upper_bound);
+//    cout << "\nRandom Matrix Y: " << endl;
+//    functions.displayMatrix(y);
+//    cout << endl;
+//    functions.multiMatrix(x, y, results);
+//    cout << "\nResult Matrix using Random x and y: " << endl;
+//    functions.displayMatrix(results);
+//    cout << "**********************************************************************************" << endl;
+//
+//
+//
+//    return 0;
+//}
 
 //void generateMatrix(double matrix[SIZE][SIZE], double lower_bound, double upper_bound){
 //    // unsigned seed = 199.99;

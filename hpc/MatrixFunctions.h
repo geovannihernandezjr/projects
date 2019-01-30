@@ -7,13 +7,15 @@
 #define SIZE 3
 class matrixFunctions{
 private:
-   double matrix[SIZE][SIZE];
+   double previousMatrix[SIZE*SIZE];
+   double average[SIZE*SIZE];
 public:
     matrixFunctions();
     void customGenerateMatrix(double [][SIZE] , double [][SIZE]);
     void randomGenerateMatrix(double [][SIZE], double, double);
     void displayMatrix(double [][SIZE]);
     void multiMatrix(double [][SIZE], double [][SIZE], double [][SIZE]);
+    void averageMatrixElements(double [][SIZE], double [][SIZE]);
 
 };
 

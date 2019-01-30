@@ -8,7 +8,7 @@ matrixFunctions::matrixFunctions() {
     for (int row = 0; row < SIZE;  ++row)
     {
         for(int col = 0; col <SIZE; ++col){
-            matrix[row][col] = 0;
+            previousMatrix[col + row*SIZE] = 0;
         }
     }
 }
@@ -21,7 +21,7 @@ void matrixFunctions::customGenerateMatrix(double x[][SIZE] , double y[][SIZE]){
     y[1][0] = -2.233; y[1][1] = -116.8; y[1][2] = -11.4;
     y[2][0] = 156.8; y[2][1] =13.44; y[2][2] = 67.8;
 }
-void matrixFunctions::randomGenerateMatrix(double matrix[][SIZE], double lower_bound, double upper_bound)
+void matrixFunctions::randomGenerateMatrix(double new_matrix[][SIZE], double lower_bound, double upper_bound)
 {
     int row, col;
     double num_generated;
@@ -33,7 +33,7 @@ void matrixFunctions::randomGenerateMatrix(double matrix[][SIZE], double lower_b
 
         for(col = 0; col < SIZE; col++){
             num_generated = distribution(generator);
-            matrix[row][col] = num_generated;
+            new_matrix[row][col] = num_generated;
             //std::cout << "Numbers Generated for Matrix: " << num_generated << "\n";
 
         }
@@ -46,9 +46,11 @@ void matrixFunctions::displayMatrix(double matrix[][SIZE])
     for(row = 0; row < SIZE; row++){
         for(col = 0; col < SIZE; col++){
             std::cout << matrix[row][col] << " ";
+            this->previousMatrix[col + row*SIZE] = matrix[row][col];
         }
         std::cout << std::endl;
     }
+
 }
 
 void matrixFunctions::multiMatrix(double x[][SIZE], double y[][SIZE], double res[][SIZE])
@@ -62,4 +64,36 @@ void matrixFunctions::multiMatrix(double x[][SIZE], double y[][SIZE], double res
             }
         }
     }
+}
+
+void matrixFunctions::averageMatrixElements(double newMatrix[][SIZE], double average[][SIZE]){
+    std::cout << "Multi Matrix should be same as results but different than 1D array:\n";
+    for(int i = 0; i<SIZE; ++i){
+        for(int j = 0; j<SIZE; ++j){
+            std::cout << "\nAverage: " << average[i][j] << std::endl;
+
+        }
+    }
+    for (int row = 0; row < SIZE; ++row){
+        for(int col = 0; col <SIZE; ++col){
+           // std::cout << "MultiMatrix: " << newMatrix[row][col] << " " << "Matrix: " << previousMatrix[col+row*SIZE] << " ";
+            if(average[row][col] == 0) {
+                average[row][col] = (previousMatrix[col + row * SIZE] + newMatrix[row][col]) / 2;
+            }
+            else{
+                average[row][col] = (average[row][col] + newMatrix[row][col])/2;
+            }
+
+            std::cout << "\nAverage: " << average[row][col] << std::endl;
+        }
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+    for(int i = 0; i < SIZE*SIZE; ++i){
+        std::cout << "1D Array test: " << previousMatrix[i];
+        std::cout << "\n";
+        //average += matrix[i];
+        //std::cout << "Average: " << average;
+    }
+
 }

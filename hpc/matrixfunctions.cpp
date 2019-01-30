@@ -2,8 +2,7 @@
 // Created by geova on 1/28/2019.
 //
 #include "matrixfunctions.h"
-#include <random>
-#include <iostream>
+
 matrixFunctions::matrixFunctions() {
     for (int row = 0; row < SIZE;  ++row)
     {
@@ -40,9 +39,10 @@ void matrixFunctions::randomGenerateMatrix(double new_matrix[][SIZE], double low
     }
 }
 
-void matrixFunctions::displayMatrix(double matrix[][SIZE])
+void matrixFunctions::displayMatrix(double matrix[][SIZE], std::string str)
 {
     int row, col;
+    std::cout << "\n" << str << std::endl;
     for(row = 0; row < SIZE; row++){
         for(col = 0; col < SIZE; col++){
             std::cout << matrix[row][col] << " ";
@@ -50,6 +50,7 @@ void matrixFunctions::displayMatrix(double matrix[][SIZE])
         }
         std::cout << std::endl;
     }
+    std::cout << std::endl;
 
 }
 
